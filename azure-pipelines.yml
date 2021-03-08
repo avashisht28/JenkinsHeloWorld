@@ -19,4 +19,4 @@ steps:
   displayName: 'Run a multi-line script'
 - task: CmdLine@2
   inputs:
-    script: 'Echo Text from command line'
+    script: 'dir'
