@@ -17,12 +17,9 @@ steps:
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
-- task: CmdLine@2
+- task: DownloadBuildArtifacts@0
   inputs:
-    script: 'dir'
-  - task: CmdLine@2
-    inputs:
-      script: |
-        echo Write your commands here
-        
-        echo Hello world
+    buildType: 'current'
+    downloadType: 'single'
+    artifactName: 'TestArtifact1'
+    downloadPath: '$(System.ArtifactsDirectory)'
